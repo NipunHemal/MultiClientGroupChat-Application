@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.ClientController">
+   <children>
+      <BorderPane layoutX="118.0" layoutY="162.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER" fillHeight="false" prefHeight="50.0" prefWidth="400.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtUserName" prefWidth="300.0" promptText="User Name" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="txtHost" prefWidth="250.0" promptText="host" text="localhost" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="txtPort" prefWidth="250.0" promptText="port" text="3000" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnConnect" mnemonicParsing="false" onAction="#btnConnectOnAction" prefWidth="250.0" text="Connect" HBox.hgrow="ALWAYS" />
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <bottom>
+            <HBox fillHeight="false" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtMessageBox" disable="true" prefWidth="384.0" promptText="Enter Message" />
+                  <Button fx:id="btnFileSelect" disable="true" mnemonicParsing="false" onAction="#btnSelectFileOnAction" prefWidth="175.0" text="📂" />
+                  <Button fx:id="btnSend" disable="true" mnemonicParsing="false" onAction="#btnSendMessageOnAction" prefWidth="220.0" text="Send" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <AnchorPane fx:id="ancMessagePanel" prefWidth="200.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 10px;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane prefWidth="378.0">
+                           <children>
+                              <VBox fx:id="messageContainer" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
